@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Sample</title>
+</head>
+<body>
+    <h1>jQuery Sample Page</h1>
+    <p id="message">This is a sample page.</p>
+    <button id="changeTextBtn">Change Text</button>
+
+    <script src="/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#changeTextBtn").click(function() {
+                $("#message").text("The text has been changed by jQuery!");
+            });
+        });
+    </script>
+</body>
+</html>
