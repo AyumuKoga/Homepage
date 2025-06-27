@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/js/script.js" as="script">
+</head>
+<body>
+    <!-- ローディング画面 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>読み込み中...</p>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    {% include "header.njk" %}
+
+    <!-- メインコンテンツ -->
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <!-- フッター -->
+    {% include "footer.njk" %}
+
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+    
+    <!-- ページ固有のスクリプト -->
+    {% if pageScript %}
+    <script src="{{ pageScript }}"></script>
+    {% endif %}
+</body>
+</html> 

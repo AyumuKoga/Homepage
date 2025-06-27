@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T'z Auto - 信頼の中古車販売・買取・修理・保険</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ヘッダー */
+        header {
+            background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,248,240,0.95) 100%);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(255,140,0,0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 10px rgba(255,140,0,0.1);
+        }
+
+        .header-scrolled {
+            background: linear-gradient(135deg, rgba(255,255,255,0.99) 0%, rgba(255,245,235,0.98) 100%);
+            border-bottom: 2px solid rgba(255,140,0,0.4);
+            box-shadow: 0 5px 25px rgba(255,140,0,0.15);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-decoration: none;
+            color: #FF8C00;
+            text-shadow: 0 2px 8px rgba(255,140,0,0.3);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo:hover {
+            text-shadow: 0 4px 15px rgba(255,140,0,0.5);
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,140,0,0.1), transparent);
+            transition: left 0.4s ease;
+        }
+
+        .nav-menu a:hover::before {
+            left: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: #FF8C00;
+            background: rgba(255,140,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* メインコンテンツ */
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(255,248,240,0.9) 0%, rgba(255,235,205,0.8) 100%), 
+                        radial-gradient(circle at 70% 30%, rgba(255,140,0,0.15) 0%, transparent 60%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="%23FF8C00" stroke-width="1" opacity="0.1"/></pattern></defs><rect fill="%23FFF8F0" width="1920" height="1080"/><rect fill="url(%23grid)" width="1920" height="1080"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,140,0,0.03) 0%, transparent 50%, rgba(255,165,0,0.03) 100%);
+            animation: gentle-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.2; }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 0 2rem;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: heroFadeIn 1.5s ease 0.3s forwards;
+            z-index: 2;
+            position: relative;
+        }
+
+        @keyframes heroFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #FF8C00;
+            text-shadow: 0 4px 15px rgba(255,140,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .hero-philosophy {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #666;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #FF8C00, #FFA500);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(255,140,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #FF8C00;
+            border: 2px solid #FF8C00;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 35px rgba(255,140,0,0.4);
+            background: linear-gradient(45deg, #FFA500, #FF8C00);
+        }
+
+        .btn-secondary:hover {
+            background: #FF8C00;
+            color: #fff;
+        }
+
+        /* 理念セクション */
+        .philosophy {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fff 0%, #FFF8F0 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #FF8C00;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF8C00, transparent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .philosophy-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .philosophy-item {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255,140,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .philosophy-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,140,0,0.2);
+        }
+
+        .philosophy-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .philosophy-icon {
+            font-size: 3rem;
+            color: #FF8C00;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-desc {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* サービスセクション */
+        .services {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFE4B5 100%);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255,140,0,0.1);
+            border: 2px solid transparent;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(255,140,0,0.2);
+            border-color: rgba(255,140,0,0.3);
+        }
+
+        .service-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: #FF8C00;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-features li {
+            color: #555;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FF8C00;
+            font-weight: bold;
+        }
+
+        /* お客様の声セクション */
+        .testimonials {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFE4B5 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(255,140,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #FF8C00;
+            opacity: 0.3;
+        }
+
+        .testimonial-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-text {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            color: #FF8C00;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* フッター */
+        footer {
+            background: linear-gradient(135deg, #333 0%, #444 100%);
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #FF8C00;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section li {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FF8C00;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #999;
+        }
+
+        /* トップに戻るボタン */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #FF8C00, #FFA500);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,140,0,0.3);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,140,0,0.4);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* アニメーション用クラス */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">🚗 T'z Auto</a>
+            <ul class="nav-menu">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#philosophy">理念</a></li>
+                <li><a href="#testimonials">お客様の声</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>T'z Auto</h1>
+                <div class="hero-subtitle">信頼の中古車販売・買取・修理・保険</div>
+                <div class="hero-philosophy">
+                    お客様の大切なカーライフを全力でサポート。<br>
+                    誠実な対応と確かな技術で、安心・安全なサービスをお届けします。<br>
+                    あなたの「最良の選択」を私たちがお手伝いいたします。
+                </div>
+                <div class="cta-buttons">
+                    <a href="#services" class="btn btn-primary scroll-to">サービス一覧</a>
+                    <a href="#contact" class="btn btn-secondary scroll-to">無料査定依頼</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="philosophy" class="philosophy">
+            <div class="container">
+                <h2 class="section-title">私たちの理念</h2>
+                <p class="section-subtitle">T'z Autoが大切にしている3つの信念</p>
+                <div class="philosophy-content">
+                    <div class="philosophy-item animate-on-scroll">
+                        <div class="philosophy-icon">🤝</div>
+                        <h3 class="philosophy-title">信頼関係を第一に</h3>
+                        <p class="philosophy-desc">お客様との長期的な信頼関係を築くことを最も大切にしています。透明性のある取引と誠実な対応で、安心してお任せいただける関係を目指します。</p>
+                    </div>
+                    <div class="philosophy-item animate-on-scroll">
+                        <div class="philosophy-icon">⚡</div>
+                        <h3 class="philosophy-title">確かな技術力</h3>
+                        <p class="philosophy-desc">経験豊富な整備士による高品質な修理・メンテナンス。最新の設備と技術で、お客様の愛車を最良の状態に保ちます。</p>
+                    </div>
+                    <div class="philosophy-item animate-on-scroll">
+                        <div class="philosophy-icon">💎</div>
+                        <h3 class="philosophy-title">お客様満足度100%</h3>
+                        <p class="philosophy-desc">すべてのお客様に心から満足していただけるサービスを提供。アフターサポートまで責任を持って対応いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">サービス内容</h2>
+                <p class="section-subtitle">車に関するあらゆるニーズにお応えします</p>
+                <div class="service-grid">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">🚗</div>
+                        <h3 class="service-title">中古車販売</h3>
+                        <p class="service-desc">厳選された高品質な中古車を豊富に取り揃えています。</p>
+                        <ul class="service-features">
+                            <li>全車両詳細点検済み</li>
+                            <li>保証付き販売</li>
+                            <li>ローン・リース対応</li>
+                            <li>納車前整備サービス</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">💰</div>
+                        <h3 class="service-title">車両買取</h3>
+                        <p class="service-desc">適正価格での高額買取を実現。迅速査定でお待たせしません。</p>
+                        <ul class="service-features">
+                            <li>無料出張査定</li>
+                            <li>即日現金お支払い</li>
+                            <li>廃車・事故車も対応</li>
+                            <li>必要書類代行サービス</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">🔧</div>
+                        <h3 class="service-title">車両修理・整備</h3>
+                        <p class="service-desc">国家資格整備士による確かな技術でお車をメンテナンス。</p>
+                        <ul class="service-features">
+                            <li>車検・点検サービス</li>
+                            <li>一般修理・板金塗装</li>
+                            <li>エンジンオーバーホール</li>
+                            <li>カスタム・チューニング</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">🛡️</div>
+                        <h3 class="service-title">損害保険</h3>
+                        <p class="service-desc">お客様に最適な自動車保険をご提案いたします。</p>
+                        <ul class="service-features">
+                            <li>各社保険比較見積もり</li>
+                            <li>事故対応サポート</li>
+                            <li>保険金請求代行</li>
+                            <li>継続契約割引サービス</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">お客様の声</h2>
+                <p class="section-subtitle">実際にご利用いただいたお客様からの嬉しいお声</p>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <p class="testimonial-text">
+                            車の知識が全くない私にも、とても丁寧に説明してくださいました。
+                            アフターサービスも充実していて、安心して車に乗れています。
+                        </p>
+                        <div class="testimonial-author">- 田中様（30代女性）</div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <p class="testimonial-text">
+                            他社より高く買い取ってもらえて満足です。
+                            手続きもスムーズで、スタッフの方の対応も素晴らしかったです。
+                        </p>
+                        <div class="testimonial-author">- 佐藤様（40代男性）</div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <p class="testimonial-text">
+                            修理の技術力が高く、愛車が新車のように蘇りました。
+                            料金も明瞭で信頼できるお店だと思います。
+                        </p>
+                        <div class="testimonial-author">- 山田様（50代男性）</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>T'z Auto</h4>
+                    <p>お客様の大切なカーライフを<br>
+                       全力でサポートいたします。<br>
+                       お気軽にお問い合わせください。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>店舗情報</h4>
+                    <p>📍 〒123-4567<br>
+                       東京都○○区○○町1-2-3<br>
+                       🚗 駐車場完備（20台）<br>
+                       🕐 9:00-19:00（定休日：水曜）</p>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>📞 <a href="tel:03-1234-5678">03-1234-5678</a><br>
+                       📧 <a href="mailto:info@tzauto.jp">info@tzauto.jp</a><br>
+                       💬 LINE査定も受付中<br>
+                       🌐 無料出張査定対応エリア拡大中</p>
+                </div>
+                <div class="footer-section">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="#services">中古車販売</a></li>
+                        <li><a href="#services">車両買取</a></li>
+                        <li><a href="#services">修理・整備</a></li>
+                        <li><a href="#services">損害保険</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 T'z Auto. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        $(document).ready(function() {
+            // スムーズスクロール
+            $('.scroll-to').click(function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 80
+                }, 800);
+            });
+
+            // ヘッダーの背景変更
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 100) {
+                    $('#header').addClass('header-scrolled');
+                    $('#backToTop').addClass('show');
+                } else {
+                    $('#header').removeClass('header-scrolled');
+                    $('#backToTop').removeClass('show');
+                }
+            });
+
+            // トップに戻るボタン
+            $('#backToTop').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+            });
+
+            // スクロールアニメーション
+            function animateOnScroll() {
+                $('.animate-on-scroll').each(function() {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+
+                    // 要素がビューポートに入ったらクラスを追加
+                    if (elementBottom > viewportTop && elementTop < viewportBottom - 100) {
+                        $(this).addClass('show');
+                    }
+                });
+            }
+
+            // ロード時とスクロール時にアニメーションを実行
+            $(window).on('scroll resize', animateOnScroll);
+            animateOnScroll(); // ページロード時にも実行
+        });
+    </script>
+</body>
+</html>

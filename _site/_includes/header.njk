@@ -1,0 +1,24 @@
+<header>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <span>T'z Auto</span>
+        </a>
+        
+        <ul class="nav-menu">
+            {% for item in navigation.mainNav %}
+            <li>
+                <a href="{{ item.url }}" 
+                   class="nav-link {{ item.url | activeClass(page.url) }}"
+                   data-page="{{ item.url }}">
+                    <span class="nav-icon">{{ item.icon }}</span>
+                    <span class="nav-text">{{ item.title }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <button class="menu-toggle" aria-label="メニューを開く">
+            <span class="hamburger"></span>
+        </button>
+    </nav>
+</header> 

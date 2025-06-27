@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スタッフ - T&#39;z Auto</title>
+    <meta name="description" content="T&#39;z Autoのスタッフをご紹介します。豊富な経験と確かな技術を持つ専門スタッフが、お客様の車ライフをサポートいたします。">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/js/script.js" as="script">
+</head>
+<body>
+    <!-- ローディング画面 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>読み込み中...</p>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <span>T'z Auto</span>
+        </a>
+        
+        <ul class="nav-menu">
+            
+            <li>
+                <a href="/" 
+                   class="nav-link "
+                   data-page="/">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">ホーム</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/company/" 
+                   class="nav-link "
+                   data-page="/company/">
+                    <span class="nav-icon">🏢</span>
+                    <span class="nav-text">会社概要</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/staff/" 
+                   class="nav-link active"
+                   data-page="/staff/">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">スタッフ</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/insurance/" 
+                   class="nav-link "
+                   data-page="/insurance/">
+                    <span class="nav-icon">🛡️</span>
+                    <span class="nav-text">保険</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/access/" 
+                   class="nav-link "
+                   data-page="/access/">
+                    <span class="nav-icon">📍</span>
+                    <span class="nav-text">アクセス</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/news/" 
+                   class="nav-link "
+                   data-page="/news/">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-text">お知らせ</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/contact/" 
+                   class="nav-link "
+                   data-page="/contact/">
+                    <span class="nav-icon">📞</span>
+                    <span class="nav-text">お問い合わせ</span>
+                </a>
+            </li>
+            
+        </ul>
+        
+        <button class="menu-toggle" aria-label="メニューを開く">
+            <span class="hamburger"></span>
+        </button>
+    </nav>
+</header> 
+
+    <!-- メインコンテンツ -->
+    <main>
+        
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">スタッフ紹介</h1>
+        <nav class="breadcrumb">
+            <a href="/">ホーム</a> &gt; スタッフ紹介
+        </nav>
+    </div>
+</section>
+
+<section class="staff-intro">
+    <div class="container">
+        <h2>私たちのチーム</h2>
+        <p>T'z Autoでは、中古車販売・買取・修理・保険の各分野で豊富な経験を持つ専門スタッフが、<br>お客様一人ひとりに寄り添ったサービスを提供しています。<br>全員がお客様の安心と信頼を第一に考え、日々研鑽を積んでいます。</p>
+    </div>
+</section>
+
+<section class="staff-list">
+    <div class="container">
+        <div class="staff-grid">
+            <div class="staff-card">
+                <div class="staff-image">
+                    <div class="image-placeholder">👨‍💼</div>
+                </div>
+                <div class="staff-info">
+                    <h3>田中 太郎</h3>
+                    <p class="staff-position">代表取締役</p>
+                    <p class="staff-description">
+                        自動車業界で20年以上の経験を持つベテラン。
+                        お客様の立場に立ったサービス提供を心がけています。
+                    </p>
+                    <div class="staff-specialties">
+                        <span class="specialty">中古車販売</span>
+                        <span class="specialty">買取査定</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-image">
+                    <div class="image-placeholder">👩‍🔧</div>
+                </div>
+                <div class="staff-info">
+                    <h3>佐藤 花子</h3>
+                    <p class="staff-position">整備主任</p>
+                    <p class="staff-description">
+                        自動車整備士として15年の経験。
+                        確かな技術でお客様の愛車を大切に扱います。
+                    </p>
+                    <div class="staff-specialties">
+                        <span class="specialty">車両修理</span>
+                        <span class="specialty">定期点検</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-image">
+                    <div class="image-placeholder">👨‍💻</div>
+                </div>
+                <div class="staff-info">
+                    <h3>鈴木 次郎</h3>
+                    <p class="staff-position">営業担当</p>
+                    <p class="staff-description">
+                        お客様とのコミュニケーションを大切にし、
+                        最適なソリューションをご提案いたします。
+                    </p>
+                    <div class="staff-specialties">
+                        <span class="specialty">中古車販売</span>
+                        <span class="specialty">保険相談</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-image">
+                    <div class="image-placeholder">👩‍💼</div>
+                </div>
+                <div class="staff-info">
+                    <h3>高橋 美咲</h3>
+                    <p class="staff-position">保険担当</p>
+                    <p class="staff-description">
+                        保険業界で10年の経験を持つ専門家。
+                        お客様に最適な保険プランをご提案します。
+                    </p>
+                    <div class="staff-specialties">
+                        <span class="specialty">自動車保険</span>
+                        <span class="specialty">事故対応</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-image">
+                    <div class="image-placeholder">👨‍🔧</div>
+                </div>
+                <div class="staff-info">
+                    <h3>伊藤 健一</h3>
+                    <p class="staff-position">整備士</p>
+                    <p class="staff-description">
+                        若手ながら確かな技術を持つ整備士。
+                        お客様の愛車を丁寧に扱います。
+                    </p>
+                    <div class="staff-specialties">
+                        <span class="specialty">車両修理</span>
+                        <span class="specialty">車検対応</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-image">
+                    <div class="image-placeholder">👩‍💼</div>
+                </div>
+                <div class="staff-info">
+                    <h3>渡辺 愛</h3>
+                    <p class="staff-position">受付・事務</p>
+                    <p class="staff-description">
+                        お客様の第一印象を大切にし、
+                        温かいおもてなしを心がけています。
+                    </p>
+                    <div class="staff-specialties">
+                        <span class="specialty">受付対応</span>
+                        <span class="specialty">事務処理</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="staff-message">
+    <div class="container">
+        <h2 class="section-title">スタッフからのメッセージ</h2>
+        <div class="message-content">
+            <p>
+                私たちT'z Autoのスタッフ一同は、お客様の車ライフをサポートすることを使命としています。
+                中古車販売から買取、修理、保険まで、各分野の専門知識を活かして、
+                お客様一人ひとりに最適なサービスを提供いたします。
+            </p>
+            <p>
+                お客様の安心と信頼を第一に考え、日々研鑽を積んでいます。
+                お気軽にご相談ください。専門スタッフが丁寧にご対応いたします。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="join-us">
+    <div class="container">
+        <h2 class="section-title">一緒に働きませんか？</h2>
+        <div class="join-content">
+            <p>
+                T'z Autoでは、一緒に働く仲間を募集しています。
+                自動車業界で経験を積みたい方、お客様サービスに興味がある方、
+                ぜひお気軽にお問い合わせください。
+            </p>
+            <a href="./contact/" class="btn btn-primary">採用情報について</a>
+        </div>
+    </div>
+</section> 
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>T'z Auto</h3>
+            <p>信頼の中古車販売・買取・修理・保険</p>
+            <div class="contact-info">
+                <p><strong>電話:</strong> 03-1234-5678</p>
+                <p><strong>営業時間:</strong> 9:00-18:00</p>
+                <p><strong>定休日:</strong> 日曜・祝日</p>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>サービス</h4>
+            <ul>
+                <li><a href="/company/">会社概要</a></li>
+                <li><a href="/staff/">スタッフ</a></li>
+                <li><a href="/insurance/">保険</a></li>
+                <li><a href="/access/">アクセス</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>お問い合わせ</h4>
+            <ul>
+                <li><a href="/contact/">お問い合わせ</a></li>
+                <li><a href="/news/">お知らせ</a></li>
+                <li><a href="/privacy/">プライバシーポリシー</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 T&#39;z Auto. All rights reserved.</p>
+    </div>
+</footer> 
+
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+    
+    <!-- ページ固有のスクリプト -->
+    
+</body>
+</html> 

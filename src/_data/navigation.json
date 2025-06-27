@@ -1,0 +1,53 @@
+{
+  "mainNav": [
+    {
+      "title": "ホーム",
+      "url": "/",
+      "icon": "🏠"
+    },
+    {
+      "title": "会社概要",
+      "url": "/company/",
+      "icon": "🏢"
+    },
+    {
+      "title": "スタッフ",
+      "url": "/staff/",
+      "icon": "👥"
+    },
+    {
+      "title": "保険",
+      "url": "/insurance/",
+      "icon": "🛡️"
+    },
+    {
+      "title": "アクセス",
+      "url": "/access/",
+      "icon": "📍"
+    },
+    {
+      "title": "お知らせ",
+      "url": "/news/",
+      "icon": "📢"
+    },
+    {
+      "title": "お問い合わせ",
+      "url": "/contact/",
+      "icon": "📞"
+    }
+  ],
+  "footerLinks": [
+    {
+      "title": "プライバシーポリシー",
+      "url": "/privacy/"
+    },
+    {
+      "title": "会社概要",
+      "url": "/company/"
+    },
+    {
+      "title": "お問い合わせ",
+      "url": "/contact/"
+    }
+  ]
+} 
