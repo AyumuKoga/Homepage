@@ -1,0 +1,54 @@
+/* history.css - 会社沿革ページ専用スタイル（リファイン） */
+
+body.history-page {
+  background: #f8f9fa;
+}
+
+.history-section {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border: 2px solid #ff9800;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(255,152,0,0.10);
+}
+
+.timeline {
+  border-left: 4px solid #ff9800;
+  padding-left: 2.5rem;
+  margin: 2.5rem 0;
+  position: relative;
+}
+.timeline-event {
+  margin-bottom: 2.2rem;
+  position: relative;
+  animation: fadeInUp 0.7s;
+}
+.timeline-event:last-child {
+  margin-bottom: 0;
+}
+.timeline-year {
+  font-weight: 700;
+  color: #ff9800;
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+.timeline-content {
+  margin-bottom: 0.5rem;
+}
+.timeline-dot {
+  position: absolute;
+  left: -2.3rem;
+  top: 0.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #ff9800;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(255,152,0,0.10);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+} 

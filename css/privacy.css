@@ -1,0 +1,24 @@
+/* privacy.css - プライバシーページ専用スタイル */
+
+body.privacy-page {
+  background: #f8f9fa;
+}
+
+.privacy-section {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+.privacy-section h2 {
+  color: #ff9800;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-left: 6px solid #ff9800;
+  padding-left: 0.5em;
+} 

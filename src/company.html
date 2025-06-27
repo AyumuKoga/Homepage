@@ -2,7 +2,11 @@
 layout: base.njk
 title: 会社概要
 description: T'z Autoの会社概要をご紹介します。私たちの理念、歴史、サービス内容について詳しく説明いたします。
+pageClass: company-page
+extraCss: "/css/company.css"
 ---
+
+<link rel="stylesheet" href="/css/company.css">
 
 <section class="page-header">
     <div class="container">
@@ -13,64 +17,180 @@ description: T'z Autoの会社概要をご紹介します。私たちの理念�
     </div>
 </section>
 
-<section class="company-info">
+<!-- 代表メッセージ・顔アイコン -->
+<section class="ceo-message">
+  <div class="container">
+    <div class="ceo-flex">
+      <div class="ceo-icon">🧑‍💼</div>
+      <div class="ceo-balloon">
+        <h2>代表メッセージ</h2>
+        <p>「車のことなら、どんな小さなことでもT'z Autoにご相談ください！<br>"安心"と"ワクワク"をお届けします。」</p>
+        <div class="ceo-name">代表取締役 登山 貴大</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 会社情報カード -->
+<section class="company-cards">
+  <div class="container">
+    <div class="card-grid">
+      <div class="info-card"><div class="info-icon">🏢</div><div class="info-label">会社名</div><div class="info-value">T'z Auto株式会社</div></div>
+      <div class="info-card"><div class="info-icon">📅</div><div class="info-label">設立</div><div class="info-value">2010年4月</div></div>
+      <div class="info-card"><div class="info-icon">👤</div><div class="info-label">代表</div><div class="info-value">登山 貴大</div></div>
+      <div class="info-card"><div class="info-icon">👥</div><div class="info-label">従業員</div><div class="info-value">3名</div></div>
+      <div class="info-card"><div class="info-icon">📍</div><div class="info-label">本店</div><div class="info-value">兵庫県尼崎市長洲本通1-1-1</div></div>
+      <div class="info-card"><div class="info-icon">📞</div><div class="info-label">電話</div><div class="info-value">06-1234-5678</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ストーリー仕立ての事業紹介 -->
+<section class="company-story">
+  <div class="container">
+    <h2 class="section-title">T'z Autoで始まる、お客様の1日</h2>
+    <div class="story-flow">
+      <div class="story-step">
+        <div class="story-emoji">🚗</div>
+        <div class="story-text"><b>Step 1:</b> 「車を買いたい！」<br>→ 豊富な在庫からピッタリの1台をご提案</div>
+      </div>
+      <div class="story-arrow">→</div>
+      <div class="story-step">
+        <div class="story-emoji">💰</div>
+        <div class="story-text"><b>Step 2:</b> 「今の車を売りたい！」<br>→ 高価買取＆即日現金化もOK</div>
+      </div>
+      <div class="story-arrow">→</div>
+      <div class="story-step">
+        <div class="story-emoji">🔧</div>
+        <div class="story-text"><b>Step 3:</b> 「修理や点検も…」<br>→ 国家資格整備士がしっかりサポート</div>
+      </div>
+      <div class="story-arrow">→</div>
+      <div class="story-step">
+        <div class="story-emoji">🛡️</div>
+        <div class="story-text"><b>Step 4:</b> 「保険も任せたい！」<br>→ 最適な保険プランをご提案</div>
+      </div>
+    </div>
+    <div class="story-comment">
+      <span class="comment-icon">💬</span>「T'z Autoなら、車のこと全部まるっとお任せ！」
+    </div>
+  </div>
+</section>
+
+<!-- 理念・強みカード -->
+<section class="philosophy-promises">
+  <div class="container">
+    <h2 class="section-title">T'z Autoの3つの約束</h2>
+    <div class="promise-grid">
+      <div class="promise-card"><div class="promise-icon">🤝</div><div class="promise-title">お客様第一</div><div class="promise-desc">どんなご相談も親身に対応。信頼と安心をお約束。</div></div>
+      <div class="promise-card"><div class="promise-icon">✨</div><div class="promise-title">品質主義</div><div class="promise-desc">厳選車両＆確かな技術で、安心のカーライフを。</div></div>
+      <div class="promise-card"><div class="promise-icon">🌱</div><div class="promise-title">地域貢献</div><div class="promise-desc">地域と共に歩み、持続可能な社会を目指します。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 沿革タイムライン -->
+<section class="company-history witty-timeline">
+  <div class="container">
+    <div class="history-header">
+      <h2 class="section-title"><span class="title-icon">📅</span>会社沿革</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-event"><div class="timeline-dot">🚀</div><div class="timeline-year">2018年8月1日</div><div class="timeline-content"><b>ティーズオート開業</b><br>個人事業として大阪府豊中市大島町2丁目3−14にてティーズオートを開業。</div></div>
+      <div class="timeline-event"><div class="timeline-dot">🏢</div><div class="timeline-year">2021年7月1日</div><div class="timeline-content"><b>現住所へ店舗移転</b><br>店舗を現在の住所（兵庫県尼崎市長洲本通1-1-1）へ移転。</div></div>
+      <div class="timeline-event"><div class="timeline-dot">🤝</div><div class="timeline-year">2021年7月</div><div class="timeline-content"><b>共栄火災海上保険株式会社 代理店業務開始</b><br>共栄火災海上保険株式会社の代理店として業務を開始。</div></div>
+      <div class="timeline-event"><div class="timeline-dot">🛡️</div><div class="timeline-year">2023年1月</div><div class="timeline-content"><b>損害保険ジャパン株式会社 代理店業務開始</b><br>損害保険ジャパン株式会社の代理店として業務を開始。</div></div>
+      <div class="timeline-event"><div class="timeline-dot">🏭</div><div class="timeline-year">2025年5月</div><div class="timeline-content"><b>西宮山口ヤード 新設</b><br>兵庫県西宮市山口町金仙寺1744に西宮山口ヤードを新設。</div></div>
+      <div class="timeline-event"><div class="timeline-dot">🚙</div><div class="timeline-year">2025年6月</div><div class="timeline-content"><b>レンタカー事業 許可・業務開始</b><br>神戸陸運部より許可を受け、レンタカー事業を開始。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 会社情報セクション -->
+<section class="company-details">
     <div class="container">
-        <div class="company-grid">
-            <div class="company-card">
-                <h2>会社情報</h2>
-                <table class="info-table">
-                    <tr>
-                        <th>会社名</th>
-                        <td>T'z Auto株式会社</td>
-                    </tr>
-                    <tr>
-                        <th>設立</th>
-                        <td>2010年4月</td>
-                    </tr>
-                    <tr>
-                        <th>資本金</th>
-                        <td>1,000万円</td>
-                    </tr>
-                    <tr>
-                        <th>代表者</th>
-                        <td>代表取締役 田中太郎</td>
-                    </tr>
-                    <tr>
-                        <th>従業員数</th>
-                        <td>25名</td>
-                    </tr>
-                    <tr>
-                        <th>事業内容</th>
-                        <td>中古車販売・買取、車両修理、自動車保険</td>
-                    </tr>
-                </table>
-            </div>
-            
-            <div class="company-card">
-                <h2>アクセス</h2>
-                <div class="access-info">
-                    <p><strong>住所:</strong> 東京都渋谷区○○○ 1-2-3</p>
-                    <p><strong>電話:</strong> 03-1234-5678</p>
-                    <p><strong>営業時間:</strong> 9:00-18:00</p>
-                    <p><strong>定休日:</strong> 日曜・祝日</p>
-                </div>
-                <a href="/access/" class="btn btn-primary">詳細アクセス</a>
+        <div class="details-header">
+            <h2 class="section-title">
+                <span class="title-icon">📋</span>
+                会社情報
+            </h2>
+        </div>
+        
+        <div class="details-content">
+            <div class="company-table-wrapper">
+            <table class="company-table">
+                    <tbody>
+                <tr>
+                    <th>会社名</th>
+                            <td>T'z Auto株式会社</td>
+                </tr>
+                <tr>
+                    <th>設立</th>
+                            <td>2010年4月</td>
+                        </tr>
+                        <tr>
+                            <th>代表者</th>
+                            <td>代表取締役 登山　貴大</td>
+                        </tr>
+                        <tr>
+                            <th>従業員数</th>
+                            <td>3名</td>
+                        </tr>
+                        <tr>
+                            <th>事業内容</th>
+                            <td>中古車販売・買取、車両修理、自動車保険、車検、レンタカー</td>
+                        </tr>
+                        <tr>
+                            <th>本店所在地</th>
+                            <td>〒660-0807 兵庫県尼崎市長洲本通1-1-1</td>
+                </tr>
+                <tr>
+                            <th>ヤード所在地</th>
+                            <td>〒651-1422 兵庫県西宮市山口町金仙寺1744</td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                            <td>06-1234-5678（本店）</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>9:00-18:00</td>
+                </tr>
+                <tr>
+                            <th>定休日</th>
+                            <td>日曜・祝日</td>
+                </tr>
+                    </tbody>
+            </table>
             </div>
         </div>
     </div>
 </section>
 
-<section class="company-mission">
+<!-- 企業理念詳細セクション -->
+<section class="company-philosophy">
     <div class="container">
-        <h2>私たちの理念</h2>
-        <div class="mission-content">
-            <div class="mission-text">
+        <div class="philosophy-header">
+            <h2 class="section-title">
+                <span class="title-icon">💡</span>
+                私たちの理念
+            </h2>
+        </div>
+        
+        <div class="philosophy-grid">
+            <div class="philosophy-card">
+                <div class="philosophy-icon">🤝</div>
                 <h3>お客様第一主義</h3>
                 <p>私たちは常にお客様の立場に立ち、最適なソリューションをご提案いたします。車は多くのお客様にとって大切な財産であり、生活に欠かせない存在です。そのため、私たちはお客様の車ライフをサポートするパートナーとして、信頼関係を大切にしています。</p>
-                
+            </div>
+            
+            <div class="philosophy-card">
+                <div class="philosophy-icon">✨</div>
                 <h3>品質へのこだわり</h3>
                 <p>中古車販売においては、厳選された車両のみを取り扱い、品質保証を徹底しています。修理においても、確かな技術と最新の設備を使用し、安全で安心なサービスを提供しています。</p>
-                
+            </div>
+            
+            <div class="philosophy-card">
+                <div class="philosophy-icon">🌱</div>
                 <h3>地域社会への貢献</h3>
                 <p>地域の皆様に愛される企業として、地域社会の発展に貢献することを目指しています。環境に配慮した事業活動を行い、持続可能な社会の実現に努めています。</p>
             </div>
@@ -78,29 +198,96 @@ description: T'z Autoの会社概要をご紹介します。私たちの理念�
     </div>
 </section>
 
-<section class="services-overview">
+<!-- 事業内容セクション -->
+<section class="business-overview">
     <div class="container">
-        <h2>サービス内容</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="service-icon">🚗</div>
+        <div class="business-header">
+            <h2 class="section-title">
+                <span class="title-icon">🚗</span>
+                事業内容
+            </h2>
+            <p class="business-subtitle">車に関する全てのサービスをワンストップで提供</p>
+        </div>
+        
+        <div class="business-grid">
+            <div class="business-card">
+                <div class="business-icon">🚗</div>
                 <h3>中古車販売</h3>
                 <p>厳選された中古車を豊富に取り揃えています。品質保証付きで安心してお買い求めいただけます。</p>
+                <ul class="business-features">
+                    <li>品質保証付き</li>
+                    <li>豊富な在庫</li>
+                    <li>アフターサービス</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <div class="service-icon">💰</div>
+            
+            <div class="business-card">
+                <div class="business-icon">💰</div>
                 <h3>中古車買取</h3>
                 <p>愛車の適正価格での買取を承ります。無料査定でお気軽にご相談ください。</p>
+                <ul class="business-features">
+                    <li>無料査定</li>
+                    <li>即日現金化</li>
+                    <li>出張査定対応</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <div class="service-icon">🔧</div>
+            
+            <div class="business-card">
+                <div class="business-icon">🔧</div>
                 <h3>車両修理</h3>
                 <p>確かな技術で車両の修理・メンテナンスを実施。定期点検も承ります。</p>
+                <ul class="business-features">
+                    <li>定期点検</li>
+                    <li>故障修理</li>
+                    <li>車検対応</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <div class="service-icon">🛡️</div>
+            
+            <div class="business-card">
+                <div class="business-icon">🛡️</div>
                 <h3>自動車保険</h3>
                 <p>お客様に最適な保険プランをご提案。安心のサポート体制でお守りします。</p>
+                <ul class="business-features">
+                    <li>複数社比較</li>
+                    <li>最適プラン提案</li>
+                    <li>事故対応サポート</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        </section>
+
+<!-- アクセス情報セクション -->
+<section class="company-access">
+    <div class="container">
+        <div class="access-header">
+            <h2 class="section-title">
+                <span class="title-icon">📍</span>
+                アクセス情報
+            </h2>
+        </div>
+        
+        <div class="access-cards">
+            <div class="access-card">
+                <h3>🏢 本店</h3>
+                <div class="access-details">
+                    <p><strong>住所:</strong> 〒660-0807 兵庫県尼崎市長洲本通1-1-1</p>
+                    <p><strong>電話:</strong> 06-1234-5678</p>
+                    <p><strong>営業時間:</strong> 9:00-18:00</p>
+                    <p><strong>定休日:</strong> 日曜・祝日</p>
+                </div>
+                <a href="/access/" class="btn btn-primary">詳細アクセス</a>
+            </div>
+            
+            <div class="access-card">
+                <h3>🏭 ヤード</h3>
+                <div class="access-details">
+                    <p><strong>住所:</strong> 〒651-1422 兵庫県西宮市山口町金仙寺1744</p>
+                    <p><strong>電話:</strong> 0797-12-3456</p>
+                    <p><strong>営業時間:</strong> 9:00-18:00</p>
+                    <p><strong>定休日:</strong> 日曜・祝日</p>
+                </div>
+                <a href="/access/" class="btn btn-primary">詳細アクセス</a>
             </div>
         </div>
     </div>
@@ -114,6 +301,7 @@ description: T'z Autoの会社概要をご紹介します。私たちの理念�
             <div class="cta-buttons">
                 <a href="/contact/" class="btn btn-primary">お問い合わせ</a>
                 <a href="/staff/" class="btn btn-secondary">スタッフ紹介</a>
+                <a href="/access/" class="btn btn-secondary">アクセス</a>
             </div>
         </div>
     </div>

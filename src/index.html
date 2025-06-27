@@ -1,86 +1,146 @@
 ---
 layout: base.njk
+pageClass: index-page
+extraCss: "/css/index.css"
 title: ホーム
 description: T'z Autoは信頼できる中古車販売・買取・修理・保険サービスを提供しています。豊富な経験と確かな技術で、お客様の愛車を大切に扱います。
 ---
 
-<section class="hero">
+<link rel="stylesheet" href="/css/index.css">
+
+<!-- ヒーローセクション -->
+<section class="hero-section">
+  <div class="container">
     <div class="hero-content">
-        <h1 class="hero-title">
-            <span class="title-main">T'z Auto</span>
-            <span class="title-sub">信頼の中古車販売・買取・修理・保険</span>
-        </h1>
-        <p class="hero-description">
-            豊富な経験と確かな技術で、お客様の愛車を大切に扱います。<br>
-            中古車販売から買取、修理、保険まで、車に関する全てのサービスをワンストップで提供。
-        </p>
-        <div class="hero-buttons">
-            <a href="/company/" class="btn btn-primary">会社概要を見る</a>
-            <a href="/contact/" class="btn btn-secondary">お問い合わせ</a>
-        </div>
+      <h1 class="hero-title">地域密着・安心サポート<br><span class="title-main">T'z Auto</span></h1>
+      <p class="hero-lead">中古車販売・買取・修理・保険まで<br>車のことならワンストップでお任せください</p>
+      <div class="hero-btns">
+        <a href="/contact/" class="btn">無料相談・お問い合わせ</a>
+        <a href="/company/" class="btn btn-secondary">会社概要</a>
+      </div>
     </div>
+    <div class="hero-image">
+      <img src="/images/customerDesk.jpg" alt="T'z Auto 店舗・スタッフ" />
+    </div>
+  </div>
 </section>
 
-<section class="services">
-    <div class="container">
-        <h2 class="section-title">サービス内容</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🚗</div>
-                <h3>中古車販売</h3>
-                <p>厳選された中古車を豊富に取り揃え。品質保証付きで安心してお買い求めいただけます。</p>
-                <a href="/company/" class="service-link">詳しく見る</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💰</div>
-                <h3>中古車買取</h3>
-                <p>愛車の適正価格での買取を承ります。無料査定でお気軽にご相談ください。</p>
-                <a href="/company/" class="service-link">詳しく見る</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>車両修理</h3>
-                <p>確かな技術で車両の修理・メンテナンスを実施。定期点検も承ります。</p>
-                <a href="/company/" class="service-link">詳しく見る</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🛡️</div>
-                <h3>自動車保険</h3>
-                <p>お客様に最適な保険プランをご提案。安心のサポート体制でお守りします。</p>
-                <a href="/insurance/" class="service-link">詳しく見る</a>
-            </div>
-        </div>
+<!-- サービス紹介 -->
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">サービス内容</h2>
+    <div class="index-cards">
+      <div class="index-card">
+        <div class="card-icon">🚗</div>
+        <h3>中古車販売</h3>
+        <p>厳選中古車を豊富にラインナップ。全車品質保証付き。</p>
+        <a href="/company/" class="service-link">詳しく見る</a>
+      </div>
+      <div class="index-card">
+        <div class="card-icon">💰</div>
+        <h3>中古車買取</h3>
+        <p>愛車を高価買取。無料査定・即日現金化も対応。</p>
+        <a href="/company/" class="service-link">詳しく見る</a>
+      </div>
+      <div class="index-card">
+        <div class="card-icon">🔧</div>
+        <h3>車両修理・整備</h3>
+        <p>国家資格整備士が常駐。車検・点検・修理も安心。</p>
+        <a href="/company/" class="service-link">詳しく見る</a>
+      </div>
+      <div class="index-card">
+        <div class="card-icon">🛡️</div>
+        <h3>自動車保険</h3>
+        <p>最適な保険プランをご提案。事故時もフルサポート。</p>
+        <a href="/insurance/" class="service-link">詳しく見る</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<section class="about">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>私たちについて</h2>
-                <p>T'z Autoは、お客様の車ライフをサポートする総合自動車サービス会社です。</p>
-                <p>長年の経験と確かな技術を活かし、中古車販売から買取、修理、保険まで、車に関する全てのサービスをワンストップで提供しています。</p>
-                <p>お客様一人ひとりに寄り添い、最適なソリューションをご提案いたします。</p>
-                <a href="/company/" class="btn btn-primary">会社概要</a>
-            </div>
-            <div class="about-image">
-                <div class="image-placeholder">
-                    <span>🏢</span>
-                </div>
-            </div>
-        </div>
+<!-- 選ばれる理由 -->
+<section class="reasons-section">
+  <div class="container">
+    <h2 class="section-title">T'z Autoが選ばれる理由</h2>
+    <div class="index-cards">
+      <div class="index-card">
+        <div class="card-icon">🏆</div>
+        <h3>豊富な実績</h3>
+        <p>地域で20年以上の信頼と実績。リピーター多数。</p>
+      </div>
+      <div class="index-card">
+        <div class="card-icon">🤝</div>
+        <h3>親身な対応</h3>
+        <p>お客様一人ひとりに寄り添い、最適なご提案。</p>
+      </div>
+      <div class="index-card">
+        <div class="card-icon">👨‍🔧</div>
+        <h3>プロの整備士</h3>
+        <p>国家資格整備士が常駐。アフターも万全。</p>
+      </div>
+      <div class="index-card">
+        <div class="card-icon">🚙</div>
+        <h3>ワンストップ対応</h3>
+        <p>販売・買取・修理・保険まで全てお任せ。</p>
+      </div>
     </div>
+  </div>
 </section>
 
+<!-- お知らせ抜粋 -->
+<section class="news-section">
+  <div class="container">
+    <h2 class="section-title">最新のお知らせ</h2>
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-date">2025年1月15日</div>
+        <div class="news-title">新年のご挨拶</div>
+        <div class="news-excerpt">新年あけましておめでとうございます。本年もT'z Autoをよろしくお願いいたします。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024年12月20日</div>
+        <div class="news-title">年末年始営業時間のお知らせ</div>
+        <div class="news-excerpt">年末年始の営業時間についてお知らせいたします。12月31日〜1月3日は休業です。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024年11月10日</div>
+        <div class="news-title">新サービス開始のお知らせ</div>
+        <div class="news-excerpt">新たに自動車保険代理店サービスを開始しました。詳しくは保険ページへ。</div>
+      </div>
+      <div class="news-link-more">
+        <a href="/news/" class="btn btn-secondary">もっと見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- アクセス・会社概要導線 -->
+<section class="access-section">
+  <div class="container">
+    <div class="access-content">
+      <div class="access-map">
+        <img src="/images/yard.jpg" alt="T'z Auto ヤード外観" />
+      </div>
+      <div class="access-info">
+        <h2>店舗アクセス</h2>
+        <p>本店：兵庫県尼崎市長洲本通1-1-1<br>ヤード：兵庫県西宮市山口町金仙寺1744</p>
+        <a href="/access/" class="btn">アクセス詳細</a>
+        <a href="/company/" class="btn btn-secondary">会社概要</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="contact-cta">
-    <div class="container">
-        <div class="cta-content">
-            <h2>お気軽にお問い合わせください</h2>
-            <p>車に関するお悩みやご質問がございましたら、お気軽にご連絡ください。<br>専門スタッフが丁寧にご対応いたします。</p>
-            <div class="cta-buttons">
-                <a href="/contact/" class="btn btn-primary">お問い合わせ</a>
-                <a href="/access/" class="btn btn-secondary">アクセス</a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="cta-content">
+      <h2>お気軽にご相談ください</h2>
+      <p>車に関するお悩みやご質問がございましたら、<br>お気軽にご連絡ください。専門スタッフが丁寧にご対応いたします。</p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary">お問い合わせ</a>
+        <a href="/access/" class="btn btn-secondary">アクセス</a>
+      </div>
     </div>
+  </div>
 </section> 

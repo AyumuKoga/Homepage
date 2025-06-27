@@ -5,7 +5,11 @@
   "author": "T'z Auto",
   "email": "info@tz-auto.com",
   "phone": "03-1234-5678",
-  "address": "東京都渋谷区○○○○",
+  "address": "〒661-0977 兵庫県尼崎市久々知2丁目24-17",
   "businessHours": "9:00-18:00",
-  "holidays": "日曜・祝日"
+  "holidays": "日曜・祝日",
+  "accessInfo": {
+    "car": "お車でお越しの方「名神高速尼崎インターより西方面に約5分」",
+    "publicTransport": "公共交通機関をご利用の方「阪急神戸線塚口駅より徒歩25分」"
+  }
 } 

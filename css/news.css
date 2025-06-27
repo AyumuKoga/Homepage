@@ -1,0 +1,62 @@
+/* news.css - ニュースページ専用スタイル（リファイン） */
+
+body.news-page {
+  background: #f8f9fa;
+  font-family: 'Segoe UI', 'Meiryo', sans-serif;
+  color: #222;
+}
+
+.news-header {
+  background: #fff3e0;
+  color: #ff9800;
+  padding: 2rem 1rem 1.2rem 1rem;
+  text-align: center;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 8px rgba(255,152,0,0.06);
+  margin-bottom: 2rem;
+}
+
+.news-list {
+  margin: 2.5rem auto;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2.2rem 1.7rem;
+}
+
+.news-item {
+  border-bottom: 1px solid #eee;
+  padding: 1.2rem 0;
+  list-style: none;
+  transition: background 0.2s;
+}
+.news-item:last-child {
+  border-bottom: none;
+}
+.news-date {
+  color: #1976d2;
+  font-size: 0.98rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.news-title {
+  color: #ff9800;
+  font-size: 1.18rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.news-excerpt {
+  color: #444;
+  font-size: 1.02rem;
+  margin-bottom: 0.5rem;
+}
+.news-link {
+  color: #1976d2;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.news-link:hover {
+  color: #ff9800;
+} 

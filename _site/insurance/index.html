@@ -14,6 +14,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
     
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="/js/script.js" as="script">
 </head>
@@ -109,6 +110,8 @@
     <!-- メインコンテンツ -->
     <main>
         
+<link rel="stylesheet" href="/css/insurance.css">
+
 <section class="page-header">
     <div class="container">
         <h1 class="page-title">自動車保険</h1>
@@ -149,7 +152,7 @@
                     <li>複数社比較</li>
                     <li>最適プラン提案</li>
                 </ul>
-            </div>
+                </div>
             
             <div class="service-card">
                 <div class="service-icon">🚨</div>
@@ -159,8 +162,8 @@
                     <li>事故対応代行</li>
                     <li>保険申請サポート</li>
                     <li>修理手配</li>
-                </ul>
-            </div>
+                    </ul>
+                </div>
         </div>
     </div>
 </section>
@@ -232,41 +235,39 @@
     </main>
 
     <!-- フッター -->
-    <footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>T'z Auto</h3>
-            <p>信頼の中古車販売・買取・修理・保険</p>
-            <div class="contact-info">
-                <p><strong>電話:</strong> 03-1234-5678</p>
-                <p><strong>営業時間:</strong> 9:00-18:00</p>
-                <p><strong>定休日:</strong> 日曜・祝日</p>
-            </div>
-        </div>
-        
-        <div class="footer-section">
-            <h4>サービス</h4>
-            <ul>
-                <li><a href="/company/">会社概要</a></li>
-                <li><a href="/staff/">スタッフ</a></li>
-                <li><a href="/insurance/">保険</a></li>
-                <li><a href="/access/">アクセス</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-section">
-            <h4>お問い合わせ</h4>
-            <ul>
-                <li><a href="/contact/">お問い合わせ</a></li>
-                <li><a href="/news/">お知らせ</a></li>
-                <li><a href="/privacy/">プライバシーポリシー</a></li>
-            </ul>
-        </div>
+    <footer>
+  <div class="footer-content container">
+    <div class="footer-logo">
+      <a href="/" class="logo">T'z Auto</a>
+      <p class="footer-desc">地域に根ざしたカーライフサポート</p>
     </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2025 T&#39;z Auto. All rights reserved.</p>
+    <div class="footer-links">
+      <h4>メニュー</h4>
+      <ul>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/company/">会社概要</a></li>
+        <li><a href="/staff/">スタッフ</a></li>
+        <li><a href="/insurance/">保険</a></li>
+        <li><a href="/access/">アクセス</a></li>
+        <li><a href="/news/">お知らせ</a></li>
+        <li><a href="/contact/">お問い合わせ</a></li>
+      </ul>
     </div>
+    <div class="footer-social">
+      <h4>公式SNS</h4>
+      <div class="sns-icons">
+        <a href="#" aria-label="Twitter"><span>🐦</span></a>
+        <a href="#" aria-label="Instagram"><span>📸</span></a>
+        <a href="#" aria-label="Facebook"><span>📘</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <small>&copy; <span id="copyright-year"></span> T'z Auto. All Rights Reserved.</small>
+    <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+  </div>
 </footer> 
 
     <!-- JavaScript -->

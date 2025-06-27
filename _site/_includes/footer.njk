@@ -1,36 +1,34 @@
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>T'z Auto</h3>
-            <p>{{ site.description }}</p>
-            <div class="contact-info">
-                <p><strong>電話:</strong> {{ site.phone }}</p>
-                <p><strong>営業時間:</strong> {{ site.businessHours }}</p>
-                <p><strong>定休日:</strong> {{ site.holidays }}</p>
-            </div>
-        </div>
-        
-        <div class="footer-section">
-            <h4>サービス</h4>
-            <ul>
-                <li><a href="/company/">会社概要</a></li>
-                <li><a href="/staff/">スタッフ</a></li>
-                <li><a href="/insurance/">保険</a></li>
-                <li><a href="/access/">アクセス</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-section">
-            <h4>お問い合わせ</h4>
-            <ul>
-                <li><a href="/contact/">お問い合わせ</a></li>
-                <li><a href="/news/">お知らせ</a></li>
-                <li><a href="/privacy/">プライバシーポリシー</a></li>
-            </ul>
-        </div>
+<footer>
+  <div class="footer-content container">
+    <div class="footer-logo">
+      <a href="/" class="logo">T'z Auto</a>
+      <p class="footer-desc">地域に根ざしたカーライフサポート</p>
     </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; {% currentYear %} {{ site.title }}. All rights reserved.</p>
+    <div class="footer-links">
+      <h4>メニュー</h4>
+      <ul>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/company/">会社概要</a></li>
+        <li><a href="/staff/">スタッフ</a></li>
+        <li><a href="/insurance/">保険</a></li>
+        <li><a href="/access/">アクセス</a></li>
+        <li><a href="/news/">お知らせ</a></li>
+        <li><a href="/contact/">お問い合わせ</a></li>
+      </ul>
     </div>
+    <div class="footer-social">
+      <h4>公式SNS</h4>
+      <div class="sns-icons">
+        <a href="#" aria-label="Twitter"><span>🐦</span></a>
+        <a href="#" aria-label="Instagram"><span>📸</span></a>
+        <a href="#" aria-label="Facebook"><span>📘</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <small>&copy; <span id="copyright-year"></span> T'z Auto. All Rights Reserved.</small>
+    <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+  </div>
 </footer> 

@@ -1,0 +1,307 @@
+/* company.css - 会社概要ページ専用スタイル（リファイン） */
+
+body.company-page {
+  background: #f8f9fa;
+  font-family: 'Segoe UI', 'Meiryo', sans-serif;
+  color: #234;
+}
+
+.company-header {
+  background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+  color: #fff;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 2px 12px rgba(25,118,210,0.10);
+  margin-bottom: 2.5rem;
+}
+
+.company-section {
+  background: #fff;
+  border: 2px solid #1976d2;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.10);
+  padding: 2.2rem 1.7rem;
+  margin: 2.5rem auto;
+  max-width: 800px;
+}
+
+.company-section h2 {
+  color: #1976d2;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  border-left: 6px solid #1976d2;
+  padding-left: 0.5em;
+}
+
+.company-timeline {
+  border-left: 4px solid #1976d2;
+  padding-left: 2rem;
+  margin: 2rem 0;
+}
+.company-timeline-event {
+  margin-bottom: 2rem;
+  position: relative;
+}
+.company-timeline-event:last-child {
+  margin-bottom: 0;
+}
+.company-timeline-year {
+  font-weight: 700;
+  color: #1976d2;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+.company-timeline-content {
+  margin-bottom: 0.5rem;
+}
+.company-timeline-dot {
+  position: absolute;
+  left: -2.1rem;
+  top: 0.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #1976d2;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+}
+
+/* 代表メッセージ */
+.ceo-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2.5rem 0 2rem 0;
+}
+.ceo-icon {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.13);
+}
+.ceo-balloon {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(25,118,210,0.10);
+  padding: 2rem 2.2rem;
+  position: relative;
+  font-size: 1.15rem;
+}
+.ceo-balloon:before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 32px;
+  border-width: 16px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+.ceo-name {
+  margin-top: 1.2rem;
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* 会社情報カード */
+.company-cards {
+  margin: 3rem 0;
+}
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.info-card {
+  background: #fff;
+  border: 2px solid #1976d2;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.10);
+  padding: 1.5rem 1.2rem;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.info-card:hover {
+  box-shadow: 0 8px 32px rgba(25,118,210,0.18);
+  transform: translateY(-4px) scale(1.04);
+}
+.info-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1976d2;
+}
+.info-label {
+  font-size: 1.02rem;
+  color: #1976d2;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.info-value {
+  font-size: 1.1rem;
+  color: #234;
+  font-weight: 600;
+}
+
+/* ストーリー仕立て */
+.company-story {
+  margin: 3.5rem 0;
+  background: linear-gradient(90deg, #e3f2fd 0%, #fff 100%);
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(25,118,210,0.07);
+  padding: 3rem 0;
+}
+.story-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0 1.5rem 0;
+}
+.story-step {
+  background: #fff;
+  border: 2px solid #1976d2;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.10);
+  padding: 1.5rem 1.2rem;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.story-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+}
+.story-arrow {
+  font-size: 2.5rem;
+  color: #1976d2;
+  font-weight: 900;
+}
+.story-comment {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: #1976d2;
+  font-weight: 700;
+}
+.comment-icon {
+  margin-right: 0.5em;
+}
+
+/* 3つの約束カード */
+.philosophy-promises {
+  margin: 3.5rem 0;
+}
+.promise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.promise-card {
+  background: #fff;
+  border: 2px solid #1976d2;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.10);
+  padding: 2rem 1.5rem;
+  min-width: 220px;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.promise-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+  color: #1976d2;
+}
+.promise-title {
+  color: #1976d2;
+  font-size: 1.18rem;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
+.promise-desc {
+  color: #234;
+  font-size: 1.02rem;
+}
+
+/* タイムライン */
+.witty-timeline .timeline {
+  border-left: 4px solid #1976d2;
+  padding-left: 2.5rem;
+  margin: 2.5rem 0;
+  position: relative;
+}
+.witty-timeline .timeline-event {
+  margin-bottom: 2.2rem;
+  position: relative;
+  animation: fadeInUp 0.7s;
+}
+.witty-timeline .timeline-event:last-child {
+  margin-bottom: 0;
+}
+.witty-timeline .timeline-year {
+  font-weight: 700;
+  color: #1976d2;
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+.witty-timeline .timeline-content {
+  margin-bottom: 0.5rem;
+}
+.witty-timeline .timeline-dot {
+  position: absolute;
+  left: -2.3rem;
+  top: 0.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #1976d2;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.witty-timeline .timeline-comment {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: #1976d2;
+  font-weight: 700;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) {
+  .ceo-flex, .card-grid, .promise-grid, .story-flow {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .company-story, .philosophy-promises {
+    padding: 1.5rem 0.5rem;
+    border-radius: 18px;
+  }
+} 

@@ -1,0 +1,37 @@
+/* insurance.css - 保険ページ専用スタイル（リファイン） */
+
+body.insurance-page {
+  background: #f4f8fb;
+}
+
+.insurance-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+
+.insurance-card {
+  background: #fff;
+  border: 2px solid #1976d2;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.10);
+  padding: 2.2rem 1.7rem;
+  max-width: 400px;
+  flex: 1 1 320px;
+  min-width: 220px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.insurance-card:hover {
+  box-shadow: 0 8px 32px rgba(25,118,210,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.insurance-card h2 {
+  color: #1976d2;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  border-left: 6px solid #1976d2;
+  padding-left: 0.5em;
+} 

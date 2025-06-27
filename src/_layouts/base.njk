@@ -13,11 +13,14 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    {% if page.extraCss %}
+    <link rel="stylesheet" href="{{ page.extraCss }}">
+    {% endif %}
     
     <!-- Preload critical resources -->
     <link rel="preload" href="/js/script.js" as="script">
 </head>
-<body>
+<body{% if page.pageClass %} class="{{ page.pageClass }}"{% endif %}>
     <!-- ローディング画面 -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-spinner">

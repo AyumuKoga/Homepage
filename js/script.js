@@ -1,56 +1,27 @@
-// DOM読み込み完了後に実行
+// =============================
+// DOMContentLoaded
+// =============================
 document.addEventListener('DOMContentLoaded', function() {
-    // ローディング画面の管理
+    // ローディング画面
     const loadingScreen = document.getElementById('loading-screen');
-    
-    // ページ読み込み完了時の処理
-    function hideLoadingScreen() {
+    function hideLoading() {
         if (loadingScreen) {
             loadingScreen.classList.add('hidden');
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
+            setTimeout(() => { loadingScreen.style.display = 'none'; }, 500);
         }
     }
+    window.addEventListener('load', hideLoading);
+    setTimeout(hideLoading, 3000);
 
-    // ページが完全に読み込まれたらローディング画面を非表示
-    window.addEventListener('load', hideLoadingScreen);
-    
-    // フォールバック: 3秒後に強制的に非表示
-    setTimeout(hideLoadingScreen, 3000);
-
-    // ヘッダーのスクロール効果
-    const header = document.querySelector('header');
-    let lastScrollTop = 0;
-
-    function handleScroll() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // ヘッダーの背景変更
-        if (scrollTop > 50) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-        
-        lastScrollTop = scrollTop;
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    // ハンバーガーメニューの制御
+    // ハンバーガーメニュー
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
             menuToggle.classList.toggle('is-active');
             navMenu.classList.toggle('active');
         });
-
-        // メニューリンクをクリックしたらメニューを閉じる
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 menuToggle.classList.remove('is-active');
                 navMenu.classList.remove('active');
@@ -58,102 +29,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ナビゲーションリンクのページ遷移制御
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // 外部リンクやアンカーリンクは通常の遷移
-            if (href.startsWith('http') || href.startsWith('#')) {
-                return;
-            }
-            
-            // 現在のページと同じ場合は何もしない
-            if (href === window.location.pathname) {
-                e.preventDefault();
-                return;
-            }
-            
-            // ページ遷移時のローディング表示
-            showPageTransition(href);
-        });
+    // スクロールでヘッダー影
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 40) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
     });
 
-    // ページ遷移の表示
-    function showPageTransition(url) {
-        // ローディング画面を表示
-        if (loadingScreen) {
-            loadingScreen.style.display = 'flex';
-            loadingScreen.classList.remove('hidden');
-        }
-        
-        // 少し遅延してから遷移（UX向上のため）
-        setTimeout(() => {
-            window.location.href = url;
-        }, 300);
-    }
-
     // スムーズスクロール
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    
-    smoothScrollLinks.forEach(link => {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+            const href = link.getAttribute('href');
+            if (href.length > 1 && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
     // トップに戻るボタン
-    const backToTopButton = document.createElement('a');
-    backToTopButton.href = '#';
-    backToTopButton.className = 'back-to-top';
-    backToTopButton.innerHTML = '↑';
-    backToTopButton.setAttribute('aria-label', 'トップに戻る');
-    document.body.appendChild(backToTopButton);
-
-    // スクロール位置に応じてボタンの表示/非表示
-    function toggleBackToTop() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    }
-
-    window.addEventListener('scroll', toggleBackToTop);
-
-    // トップに戻るボタンのクリックイベント
-    backToTopButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    const toTopBtn = document.getElementById('toTopBtn');
+    if (toTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                toTopBtn.style.display = 'block';
+            } else {
+                toTopBtn.style.display = 'none';
+            }
         });
-    });
+        toTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // ページ遷移アニメーション
     const mainContent = document.querySelector('main');
     if (mainContent) {
         mainContent.classList.add('page-transition');
-        
-        // ページ読み込み完了後にアニメーション開始
-        setTimeout(() => {
-            mainContent.classList.add('loaded');
-        }, 100);
+        setTimeout(() => { mainContent.classList.add('loaded'); }, 100);
     }
 
     // フォームの送信制御
@@ -259,6 +176,21 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Page visible');
         }
     });
+
+    // フェードインアニメーション
+    const fadeEls = document.querySelectorAll('.fadein, .card, .access-card, .index-card, .staff-card, .insurance-card, .news-item');
+    const fadeInOnScroll = () => {
+        fadeEls.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+                el.style.opacity = 1;
+                el.style.transform = 'none';
+                el.style.transition = 'opacity 0.7s, transform 0.7s';
+            }
+        });
+    };
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
 });
 
 // グローバル関数（他のスクリプトから呼び出し可能）
